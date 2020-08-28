@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Teacher Appreciation Day</title>
+        <meta charset="UTF-8">
+        <meta name="description" content="Place Your Bets">
+        <meta name="author" content="CYK">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href='https://fonts.googleapis.com/css?family=Tangerine|Montserrat|Indie+Flower|Josefin+Sans|Quicksand|Raleway|Pacifico|Dancing+Script|Comfortaa|Cookie|Josefin+Slab|Sacramento|Marck+Script|Bad+Script|Niconne|Parisienne|Pompiere|Annie+Use+Your+Telescope' rel='stylesheet'>
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.10/css/all.css" integrity="sha384-+d0P83n9kaQMCwj8F4RJB66tzIwOKmrdb46+porD/OvrJ+37WqIM7UoBtwHO6Nlg" crossorigin="anonymous">
+        <script src="https://code.jquery.com/jquery-3.1.1.js"></script>
+        
+        <link href = "https://code.jquery.com/ui/1.10.4/themes/ui-lightness/jquery-ui.css"
+         rel = "stylesheet">
+        <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+        <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.0/jquery.min.js"></script>       
+        
+        
+    </head>
+    <body>    
+        <div class="container">
+            
+           <div class="main_container">
+               <p class="main_question">What<br/>is<br/>teaching?</p>
+               <p class="main_answer"></p>
+           </div>
+            
+        </div>    
+        <style>
+            html, body {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+.container{
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    animation-timing-function: ease-in-out;
+    animation-duration: 20s;
+    animation-delay: 0s;    
+    animation-iteration-count: infinite;
+    animation-direction: right;
+    animation-name: fun;
+    overflow: hidden;
+    transition: 2s;
+}
+
+@keyframes fun{
+    0% {
+        background-color: PapayaWhip;
+    }
+    20%{
+        background-color: Honeydew;
+    }
+    40%{
+        background-color: MistyRose;
+    }
+    60%{
+        background-color: Khaki;
+    }
+    80%{
+        background-color: AliceBlue;
+    }
+    100%{
+        background-color: PapayaWhip;
+    }    
+}
+
+.main_container{
+    background: transparent;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    display: inline-table;
+    text-align: center;
+    position: relative;
+}
+
+.main_question{
+    width: 100%;
+    height: 100%;
+    color: transparent;
+    font-family: Sacramento;
+    font-size: 0%;
+    display: table-cell;
+    vertical-align: middle;
+}
+
+.main_answer{
+    width: 100%;
+    height: 100%;
+    color: transparent;
+    font-family: Cookie;
+    font-size: 0%;
+    display: table-cell;
+    vertical-align: middle;
+}
+
+        </style>   
+        <script>
+            quotesArray = ["teaching is the profession<br/>that teaches<br/>all the other professions.", "a teacher is a compass<br/>that activates the magnets<br/>of curiosity, knowledge<br/> and wisdom <br/>in the pupils.", "a teacher affects eternity;<br/>he can never tell<br/>where his influence stops."];
+
+questionsArray = ["What is teaching?", "What<br/>is a<br/>teacher?", "What does<br/>a<br/>teacher do?"]
+
+quotesAuthorArray = ["unknown", "Ever Garrison", "Henry Brooks Adam"];
+
+comment = "For everything<br/>teachers do...<br/>For everything<br/>they teach us...<br/>For all the ways<br/>they inspire us...<br/>we say:";
+
+thankyou = "Thank you!<br/>¡Gracias!<br/>Danke!<br/>Grazie!<br/>Obrigado!<br/>Merci!<br/>";
+
+jQuery(document).ready( function(){
+    
+    
+    $(".main_question").animate({
+    
+        "font-size": "500%",
+        "color": "Black"
+        }, 3000
+    );
+    
+    displayAnswer(quotesArray[0], 2);
+    displayQuestion(questionsArray[1], 4);
+    displayAnswer(quotesArray[1], 6);
+    displayQuestion(questionsArray[2], 8);
+    displayAnswer(quotesArray[2], 10);
+    displayAnswer(comment, 12);
+    displayQuestion(thankyou, 14);
+    
+    function displayAnswer(text, i){
+        
+        setTimeout( function(){
+            $(".main_question").html(text);
+            $(".main_question").css("font-size", "0%");
+            $(".main_question").css("color", "transparent");
+            $(".main_question").css("font-family", "Marck Script");
+            $(".main_question").animate({    
+                "font-size": "200%",
+                "color": "Black"
+                }, 3000
+            );
+        }, i * 3000);
+    }
+    
+    function displayQuestion(text, i){
+        
+        setTimeout( function(){
+            $(".main_question").html(text);
+            $(".main_question").css("font-size", "0%");
+            $(".main_question").css("color", "transparent");
+            $(".main_question").css("font-family", "Sacramento");
+            var size = "500%";
+            if (i == 14)
+                size = "250%";
+            $(".main_question").animate({    
+                "font-size": size,
+                "color": "Black"
+                }, 3000
+            );
+        }, i * 3000);
+    }
+    
+});
+        </script> 
+    </body>
+</html>
